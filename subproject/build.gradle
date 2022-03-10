@@ -5,6 +5,7 @@ plugins {
 
 idea.module.settings {    
     withModuleXml { XmlProvider p ->
-        throw new IllegalStateException("suberror")
+        moduleXml.asNode().appendNode('foo', [name: 'bar'])
+        throw new IllegalStateException("Some exception")
     }
 }

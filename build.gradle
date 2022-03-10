@@ -7,8 +7,9 @@ idea.project.settings {
     withIDEADir { File dir ->
         println("Project dir: " + dir.absolutePath)
     }
-    
+
     withIDEAFileXml("workspace.xml") { XmlProvider p ->
-      println("Project xml2")
+        println("Project xml2")
+        p.asNode().appendNode('foo', [name: 'bar'])
     }
 }
