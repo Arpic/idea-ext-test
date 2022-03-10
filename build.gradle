@@ -1,0 +1,14 @@
+plugins {
+    id "java"
+    id "org.jetbrains.gradle.plugin.idea-ext" version "1.1.3"
+}
+
+idea.project.settings {
+    withIDEADir { File dir ->
+        println("Project dir: " + dir.absolutePath)
+    }
+    
+    withIDEAFileXml("workspace.xml") { XmlProvider p ->
+      println("Project xml2")
+    }
+}
